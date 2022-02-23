@@ -4,7 +4,7 @@ AddEventHandler("motels:init", function()
     Wait(500)
     TriggerClientEvent("motels:getDoorList", -1, ROOM_CONFIG)
     
-    TriggerEvent("redem:getPlayerFromId", src, function(user)
+    TriggerEvent("vorp:getPlayerFromId", src, function(user)
         TriggerClientEvent("motels:getUser", src, user)
         initMotels(src, user)
 	end)
@@ -19,7 +19,7 @@ end)
 RegisterServerEvent("motels:rentRoom")
 AddEventHandler("motels:rentRoom", function(motelId, roomId, target)
     local src = source
-    TriggerEvent('redemrp:getPlayerFromId', src, function(user)
+    TriggerEvent('vorp:getPlayerFromId', src, function(user)
         if user.getMoney() >= 10 then
             user.removeMoney(tonumber(10))
             MySQL.Async.execute("UPDATE `keys` SET holder = @holder, roommate = @roommate WHERE `key` = @key", {
@@ -37,7 +37,7 @@ end)
 RegisterServerEvent("motels:unRent")
 AddEventHandler("motels:unRent", function(holder, motelId, roomId)
     local src = source
-    TriggerEvent('redemrp:getPlayerFromId', src, function(user)
+    TriggerEvent('vorp:getPlayerFromId', src, function(user)
         MySQL.Async.execute("UPDATE `keys` SET holder = @newholder, roommate = @roommate WHERE holder = @oldholder", {
             ["@newholder"] = "",
             ["@roommate"] = "",
