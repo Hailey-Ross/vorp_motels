@@ -4,22 +4,17 @@ rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aw
 
 dependency "ghmattimysql"
 dependency "vorp_core"
+dependency "redm-rpc"
 
 server_scripts {
 	"server/sv_main.lua",
-	"server/sv_room_config.lua.lua",
-	"@redm-rpc/lib.lua"
+	"server/sv_room_config.lua",
+	"redm-rpc/lib.lua"
 }
 
 client_scripts {
 	"client/cl_main.lua",
 	"client/cl_utils.lua",
-        "client/cl_commands.lua",
-	"@redm-rpc/lib.lua"
+    "client/cl_commands.lua",
+	"redm-rpc/lib.lua"
 }
-
-export "CallRemoteMethod"
-export "RegisterMethod"
-
-server_export "CallRemoteMethod"
-server_export "RegisterMethod"
