@@ -1,7 +1,5 @@
-# VORPtels
-Motels script for REDEM:RP that is being Converted for use with VORP
+# VORP-tels
+Original Motels script for REDEM:RP has been Converted for use with VORP
 
-This script is provided as is.
+This script is provided as is with support.
 
-Available Motels:
-Valentine
