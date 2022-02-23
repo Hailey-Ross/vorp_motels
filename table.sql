@@ -13,8 +13,8 @@
 
 
 -- Dumping database structure for redemrp
-CREATE DATABASE IF NOT EXISTS `redemrp` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `redemrp`;
+CREATE DATABASE IF NOT EXISTS `vorpv2` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `vorpv2`;
 
 -- Dumping structure for table redemrp.keys
 CREATE TABLE IF NOT EXISTS `keys` (
