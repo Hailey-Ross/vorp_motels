@@ -13,5 +13,5 @@ server_scripts {
 client_scripts {
 	"client/cl_main.lua",
 	"client/cl_utils.lua",
-  "client/cl_commands.lua"
+        "client/cl_commands.lua"
 }
