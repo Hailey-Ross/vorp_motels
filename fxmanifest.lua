@@ -7,11 +7,19 @@ dependency "vorp_core"
 
 server_scripts {
 	"server/sv_main.lua",
-	"server/sv_room_config.lua.lua"
+	"server/sv_room_config.lua.lua",
+	"@redm-rpc/lib.lua"
 }
 
 client_scripts {
 	"client/cl_main.lua",
 	"client/cl_utils.lua",
-        "client/cl_commands.lua"
+        "client/cl_commands.lua",
+	"@redm-rpc/lib.lua"
 }
+
+export "CallRemoteMethod"
+export "RegisterMethod"
+
+server_export "CallRemoteMethod"
+server_export "RegisterMethod"
