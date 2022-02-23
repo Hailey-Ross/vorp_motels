@@ -302,7 +302,7 @@ end
 
 RegisterCommand("lock", function()
     if #OwnedKeys == 0 and #RoomMateData == 0 then
-        TriggerEvent("redem_roleplay:NotifyLeft", "Motel", "You have no room or dont have access to any room.", "generic_textures", "tick", 5000)
+        TriggerEvent("vorp:NotifyLeft", "Motel", "You have no room or dont have access to any room.", "generic_textures", "tick", 5000)
         return
     end
      if #OwnedKeys > 0  then
@@ -312,7 +312,7 @@ RegisterCommand("lock", function()
             local motelId, roomId = OwnedKeys[i].motelId, OwnedKeys[i].roomId
 
             if GetDistanceBetweenCoords(pedcoords, doorlist[motelId].rooms[roomId].door, true) <= 1.5 then
-                print("toggleing door", motelId, roomId)
+                print("toggling door", motelId, roomId)
                 ToggleDoor(motelId, roomId)
                 return
             end
