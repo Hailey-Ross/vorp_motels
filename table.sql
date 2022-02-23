@@ -1,15 +1,12 @@
--- Dumping database structure for redemrp
 CREATE DATABASE IF NOT EXISTS `vorpv2` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `vorpv2`;
 
--- Dumping structure for table redemrp.keys
 CREATE TABLE IF NOT EXISTS `keys` (
   `key` varchar(50) DEFAULT NULL,
   `holder` varchar(60) DEFAULT NULL,
   `roommate` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table redemrp.keys: ~200 rows (approximately)
 /*!40000 ALTER TABLE `keys` DISABLE KEYS */;
 INSERT IGNORE INTO `keys` (`key`, `holder`, `roommate`) VALUES
 	('key_1_1', '', ''),
@@ -202,7 +199,3 @@ INSERT IGNORE INTO `keys` (`key`, `holder`, `roommate`) VALUES
 	('key_7_8', '', NULL),
 	('key_7_9', '', NULL);
 /*!40000 ALTER TABLE `keys` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
