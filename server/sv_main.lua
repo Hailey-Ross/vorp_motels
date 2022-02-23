@@ -22,7 +22,7 @@ AddEventHandler("motels:rentRoom", function(motelId, roomId, target)
     TriggerEvent('vorp:getPlayerFromId', src, function(user)
         if user.getMoney() >= 10 then
             user.removeMoney(tonumber(10))
-            MySQL.Async.execute("UPDATE `keys` SET holder = @holder, roommate = @roommate WHERE `key` = @key", {
+            exports.ghmattimysql:execute("UPDATE `keys` SET holder = @holder, roommate = @roommate WHERE `key` = @key", {
                 ["@holder"] = user.getIdentifier(),
                 ["@roommate"] = "",
                 ["@key"] = "key_"..motelId.."_"..roomId
@@ -38,7 +38,7 @@ RegisterServerEvent("motels:unRent")
 AddEventHandler("motels:unRent", function(holder, motelId, roomId)
     local src = source
     TriggerEvent('vorp:getPlayerFromId', src, function(user)
-        MySQL.Async.execute("UPDATE `keys` SET holder = @newholder, roommate = @roommate WHERE holder = @oldholder", {
+        exports.ghmattimysql:execute("UPDATE `keys` SET holder = @newholder, roommate = @roommate WHERE holder = @oldholder", {
             ["@newholder"] = "",
             ["@roommate"] = "",
             ["@oldholder"] = user.getIdentifier()
@@ -72,7 +72,7 @@ RPC.Register("motels:getEmptyRoom", function(motelId)
 end)
 
 function initMotels(src, user)
-    local result = MySQL.Sync.fetchAll("SELECT * FROM `keys` WHERE holder = @holder", {['holder'] = user.getIdentifier()})
+    local result = exports.ghmattimysql:fetchAll("SELECT * FROM `keys` WHERE holder = @holder", {['holder'] = user.getIdentifier()})
     print(json.encode(result))
     local data = {}
 
