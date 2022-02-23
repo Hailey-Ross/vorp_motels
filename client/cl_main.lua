@@ -37,7 +37,7 @@ AddEventHandler("motels:updateOwnedKeys", function(motelId, roomId, action, room
         end
     elseif action then
         table.insert(OwnedKeys, {motelId = motelId, roomId = roomId})
-        TriggerEvent("redem_roleplay:NotifyLeft", "Motel", "You received the key Room-"..roomId.." in "..doorlist[motelId].info.name..".", "generic_textures", "tick", 6000)
+        TriggerEvent("vorp:NotifyLeft", "Motel", "You received the key Room-"..roomId.." in "..doorlist[motelId].info.name..".", "generic_textures", "tick", 6000)
     end
 end)
 
@@ -46,7 +46,7 @@ Citizen.CreateThread(function()
     Wait(5000)
     StartOwnerChecks()
     StartMarkersCheck()
-    TriggerEvent("redemrp_menu_base:getData",function(call)
+    TriggerEvent("vorp:getData",function(call)
         MenuData = call
     end)
     while true do
@@ -193,7 +193,7 @@ function RentRoom(motelId)
             menu.close()
         end)
     elseif not result then
-        TriggerEvent("redem_roleplay:NotifyLeft", "Motel", "There is no any available rooms.", "generic_textures", "tick", 5000)
+        TriggerEvent("vorp:NotifyLeft", "Motel", "There is no any available rooms.", "generic_textures", "tick", 5000)
     end
 end
 
