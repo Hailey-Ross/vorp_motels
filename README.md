@@ -1,5 +1,5 @@
 # VORP_Motels
-Original Motels script for REDEM:RP has been Converted for use with VORP
+Original Motels script for REDEM:RP which is being converted for use with VORP
 
 This script is provided as is without support.
 
