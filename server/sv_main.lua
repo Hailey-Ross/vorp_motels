@@ -50,7 +50,9 @@ AddEventHandler("motels:unRent", function(holder, motelId, roomId)
 end)
 
 
-RPC.Register("motels:getEmptyRoom", function(motelId)
+--RPC.Register("motels:getEmptyRoom", function(motelId)
+	RegisterServerEvent("motels:getEmptyRoom")
+	AddEventHandler("motels:getEmptyRoom", function(motelId)
     print(json.encode(motelId))
     local result = MySQL.Sync.fetchAll("SELECT * FROM `keys`")
     local el = {}
